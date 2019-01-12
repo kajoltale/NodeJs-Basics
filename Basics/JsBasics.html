@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Java Script</title>
+<script language="javascript" type="text/javascript">
+document.write("Hello World!")
+// Javascript is untyped language.
+var name = "Kajol"
+var age = 21
+document.write(" ",name," ",age," ")
+age = "Kajol"
+document.write(age)
+Alert Dialog Box
+function Warn() {
+	alert ("This is a warning message!");
+	document.write ("This is a warning message!");
+}
+//Confirming Dialog Box
+function getConfirmation() {
+	var retVal = confirm("Do you want to continue ?");
+	if( retVal == true ) {
+		document.write ("User wants to continue!");
+        return true;
+    }
+    else {
+    	document.write ("User does not want to continue!");
+        return false;
+    }
+}
+//Prompt Dialouge
+function getValue() {
+	var retVal = prompt("Enter your name: ", "your name here");
+	document.write("You have entered: " + retVal);
+}
+function getValue() {
+	var a,b,c;
+	a = void(b = 5, c = 7);
+	document.write('a = ' + a + ' b = ' + b +' c = ' + c );
+}
+//Redirect 
+function Redirect() {
+	window.location="http://www.google.com";
+	For different browsers
+	var browsername=navigator.appName;
+	if(browsername == "Netscape") {
+		window.location="http://www.location.com/ns.htm";
+	}
+	else if (browsername =="Microsoft Internet Explorer") {
+		window.location="http://www.location.com/ie.htm";
+	}
+	else {
+		window.location="http://www.location.com/other.htm";
+	}
+	To delay
+	document.write("You will be redirected to main page in 10 sec.");
+	setTimeout('Redirect()', 10000);
+}
+//Events
+function over() {
+	document.write("Go Explore")
+}
+function out() {
+	document.write("Have a nice tour")
+}
+//Store Cookie
+function WriteCookie(argument) {
+	if(document.myform.customer.value == "") {
+		alert("Enter some value");
+		return;
+	}
+	var now = new Date();
+	now.setMonth(now.getMonth() + 1);
+	//To delete a cookie
+	 // now.setMonth(now.getMonth() - 1);
+	cookievalue = escape(document.myform.customer.value) + ";";
+	document.cookie = "name=" + cookievalue;
+	document.cookie = "expire=" + now.toUTCString() + ";";
+	document.write("Setting Cookies: " + "name=" + cookievalue);
+	// document.write("Setting Cookies: " + "name=" + cookievalue + "expires=" + now);
+}
+//Read Cookie
+function ReadCookie() {
+	var allcookies = document.cookie;
+    document.write ("All Cookies : " + allcookies );
+               
+    cookiearray = allcookies.split(';');
+    for(var i=0; i<cookiearray.length; i++) {
+    	name = cookiearray[i].split('=')[0];
+        value = cookiearray[i].split('=')[1];
+        document.write ("Key is : " + name + " and Value is : " + value);
+    }
+}
+</script>
+
+<!-- //Getting javascript from another file
+	<script type="text/javascript" src="demo.js"> -->
+
+<!--For the sites which blocked script.-->
+<noscript>This java script need to go ahead</noscript> 
+</head>
+<body>
+<h1>Welcome</h1>
+<label onmouseover="over()" onmouseout="out()">Travel</label>
+<br><br>
+<form name="myform" action="">
+	<input type="button" value="Alert Box" onclick="Warn();"/>
+	<input type="button" value="Confiem Box" onclick="getConfirmation();"/>
+	<input type="button" value="Propmt Box" onclick="getValue();"/>
+	<input type="button" value="Redirect Me" onclick="Redirect();"/>
+	<input type="button" value="Print" onclick="window.print()"/><br><br>
+
+	<!--Uses of void-->
+	<p>Click the following, This won't react at all...</p>
+    <!-- <a href="javascript:void(alert('Warning!!!'))">Click me!</a><br><br> -->
+    <a href="javascript:void(0)">Click me!</a>
+
+    <input type="button" value="Click Me" onclick="getValue();"/><br><br>
+
+	Enter Name: <input type="text" name="customer"/>
+	<input type="button" value="Set Cookie" onclick="WriteCookie();"/>
+	<p> Click the following button and see the result:</p>
+    <input type="button" value="Get Cookie" onclick="ReadCookie()"/>
+    
+</form>
+</body>
+</html>

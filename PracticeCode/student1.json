@@ -1,0 +1,38 @@
+{
+	"student": [{
+			"name": "mat",
+			"marks": 96,
+			"address": {
+				"city": "amt"
+			}
+		},
+		{
+			"name": "alice",
+			"marks": 56,
+			"address": {
+				"city": "amt"
+			}
+		},
+		{
+			"name": "bob",
+			"marks": 21,
+			"address": {
+				"city": "amt"
+			}
+		},
+		{
+			"name": "nilesh",
+			"marks": 49,
+			"address": {
+				"city": "amt"
+			}
+		},
+		{
+			"name": "pooja",
+			"marks": 76,
+			"address": {
+				"city": "amt"
+			}
+		}
+	]
+}
